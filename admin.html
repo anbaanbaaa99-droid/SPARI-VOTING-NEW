@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPARI Election Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div>
+      <p class="admin-eyebrow">Monitoring real-time</p>
+      <h1>SPARI Election Dashboard</h1>
+      <p>Kelola status voting, hasil, diagram, dan data pemilih.</p>
+    </div>
+    <div class="header-actions">
+      <span id="statusBadge" class="admin-status">Memuat...</span>
+      <button type="button" class="secondary-button" onclick="logout()">Keluar</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="dashboard" aria-label="Ringkasan hasil">
+      <article class="box"><span>Total Pemilih</span><strong id="total">0</strong></article>
+      <article class="box"><span>Arya Ahmad Rizaldi</span><strong id="kandidat1">0</strong></article>
+      <article class="box"><span>Ovie Dwi Riantiyastika</span><strong id="kandidat2">0</strong></article>
+    </section>
+
+    <section class="admin-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading">
+          <div><p class="admin-eyebrow">Visualisasi</p><h2>Diagram Hasil Vote</h2></div>
+        </div>
+        <div class="canvas-wrap"><canvas id="voteChart"></canvas></div>
+      </article>
+
+      <article class="panel control-panel">
+        <div class="panel-heading"><div><p class="admin-eyebrow">Kontrol</p><h2>Status Voting</h2></div></div>
+        <p>Perubahan status diproses oleh server dan langsung berlaku untuk seluruh pemilih.</p>
+        <div class="control-buttons">
+          <button type="button" onclick="setVoteStatus('OPEN')">Buka Voting</button>
+          <button type="button" class="danger-button" onclick="setVoteStatus('CLOSED')">Tutup Voting</button>
+          <button type="button" class="secondary-button dark" onclick="loadAdmin()">Refresh Data</button>
+          <button type="button" class="secondary-button dark" onclick="exportCSV()">Export CSV</button>
+        </div>
+        <p id="adminMessage" class="admin-message" role="status"></p>
+      </article>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="panel-heading">
+        <div><p class="admin-eyebrow">Audit pemilih</p><h2>Data Pemilih</h2></div>
+        <input type="search" id="searchInput" placeholder="Cari nama, ID, atau kandidat">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>No.</th><th>ID Peserta</th><th>Nama</th><th>Kandidat</th><th>Waktu</th></tr></thead>
+          <tbody id="table"><tr><td colspan="5">Memuat data...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pemilihan Wakil Ketua SPARI 2026">
+  <title>Pemilihan Wakil Ketua SPARI 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="top-nav" aria-label="Navigasi utama">
+    <a href="index.html" class="brand">SPARI 2026</a>
+    <div class="nav-links">
+      <a href="#candidate">Pemilihan</a>
+      <a href="#result">Hasil Vote</a>
+      <a href="winner.html">Hasil Akhir</a>
+      <a href="admin-login.html">Admin</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <img src="assets/logo-spari.svg" class="logo" alt="Logo SPARI">
+    <p class="eyebrow">Pemilihan Wakil Ketua</p>
+    <h1>SPARI ELECTION 2026</h1>
+    <h2>Suaramu menentukan masa depan organisasi</h2>
+    <div id="statusBadge" class="status-badge">Memeriksa status...</div>
+    <button type="button" class="primary-button" onclick="goVote()">Mulai Memilih</button>
+  </header>
+
+  <main>
+    <section id="candidate" class="candidate-section">
+      <div class="section-heading">
+        <p class="eyebrow dark">Gunakan hak suara Anda</p>
+        <h2>Pilih Kandidat Terbaik</h2>
+        <p>Satu ID peserta hanya dapat digunakan untuk satu kali vote.</p>
+      </div>
+
+      <div class="cards">
+        <article class="candidate-card">
+          <img src="assets/kandidat-1.svg" alt="Foto Arya Ahmad Rizaldi">
+          <h3>Arya Ahmad Rizaldi</h3>
+          <p>“Pemimpin muda, inovatif, dan berdedikasi.”</p>
+          <button class="vote-button" type="button" data-candidate="Arya Ahmad Rizaldi">Pilih Arya</button>
+        </article>
+
+        <article class="candidate-card">
+          <img src="assets/kandidat-2.svg" alt="Foto Ovie Dwi Riantiyastika">
+          <h3>Ovie Dwi Riantiyastika</h3>
+          <p>“Solid membangun SPARI lebih maju.”</p>
+          <button class="vote-button" type="button" data-candidate="Ovie Dwi Riantiyastika">Pilih Ovie</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="result" class="result-section">
+      <div class="section-heading light">
+        <p class="eyebrow">Perolehan terkini</p>
+        <h2>Hasil Vote</h2>
+      </div>
+      <div id="hasil" class="result-grid" aria-live="polite">
+        <div class="loading-card">Memuat data...</div>
+      </div>
+      <div class="public-chart-card">
+        <canvas id="publicVoteChart" aria-label="Diagram hasil voting"></canvas>
+      </div>
+    </section>
+
+    <section class="countdown">
+      <h2>Voting Ditutup Dalam</h2>
+      <div id="timer">00 Hari 00:00:00</div>
+    </section>
+  </main>
+
+  <footer>SPARI Election 2026 · Your Voice Matters</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

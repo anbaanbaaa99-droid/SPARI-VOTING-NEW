@@ -1,0 +1,11 @@
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; padding: 24px; display: grid; place-items: center; font-family: Arial, sans-serif; color: #0f172a; background: radial-gradient(circle at top left, #2563eb, transparent 42%), #071a3d; }
+.winner-card { width: min(100%, 760px); padding: clamp(28px, 5vw, 54px); border-radius: 26px; background: #fff; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,.28); }
+.eyebrow { color: #155eef; text-transform: uppercase; letter-spacing: .15em; font-size: .78rem; font-weight: 700; }
+h1 { margin: 8px 0 25px; font-size: clamp(2rem, 5vw, 3.6rem); }
+.winner-name { padding: 24px; border-radius: 18px; background: #eff6ff; color: #0c43b6; font-size: clamp(1.45rem, 4vw, 2.5rem); font-weight: 700; }
+.winner-detail { color: #64748b; min-height: 24px; }
+.winner-chart { height: 330px; margin: 24px auto; }
+.winner-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.winner-actions a { padding: 12px 22px; border-radius: 999px; background: #155eef; color: #fff; text-decoration: none; font-weight: 700; }
+.winner-actions a.secondary { background: #e2e8f0; color: #0f172a; }

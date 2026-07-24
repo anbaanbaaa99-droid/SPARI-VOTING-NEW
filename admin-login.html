@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin SPARI</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <div class="login-logo">S</div>
+    <p class="admin-eyebrow">Area terbatas</p>
+    <h1>SPARI Admin</h1>
+    <p>Masukkan password admin untuk membuka dashboard.</p>
+    <form id="loginForm">
+      <label for="password">Password</label>
+      <input type="password" id="password" autocomplete="current-password" required placeholder="Password admin">
+      <button type="submit" id="loginButton">Masuk</button>
+      <p id="loginMessage" class="form-message" role="alert"></p>
+    </form>
+    <a href="index.html" class="back-link">← Kembali ke halaman pemilihan</a>
+  </main>
+  <script src="config.js"></script>
+  <script src="admin-login.js"></script>
+</body>
+</html>
