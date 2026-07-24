@@ -52,13 +52,29 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(circle at 20% 15%, rgba(21, 94, 239, .7), transparent 35%),
     linear-gradient(135deg, #071a3d, #0f3fa4);
 }
-.logo{
-  max-width:420px;
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 20px;
+.brand-logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-logo {
+    width: 320px !important;
+    max-width: 75vw !important;
+    height: auto !important;
+    max-height: 110px !important;
+    object-fit: contain !important;
+    display: block;
+    position: static !important;
+}
+@media (max-width: 600px) {
+    .brand-logo {
+        width: 240px !important;
+        max-width: 80vw !important;
+        max-height: 90px !important;
+    }
 }
 .hero h1 { margin: 0; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.05; }
 .hero h2 { margin: 20px 0; font-weight: 300; font-size: clamp(1rem, 3vw, 1.5rem); }
